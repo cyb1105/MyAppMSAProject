@@ -1,0 +1,15 @@
+server:
+  port: 8012
+
+spring:
+  application:
+    name: ConfigServer
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/cyb1105/MyAppConfiguration.git
+          username: dbsqud1105@gmail.com
+          password: dbsqud7008!
+          clone-on-start: true

@@ -1,0 +1,28 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: users-ws
+
+  devtools:
+    restart:
+      enabled: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8010/eureka
+
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+gateway:
+  ip: 127.0.0.1
+
+token:
+  expiration_time: 86400000 #1days(milliseconds)
+  secret: local_secret
+
+
+
