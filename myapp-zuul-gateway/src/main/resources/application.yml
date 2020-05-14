@@ -4,7 +4,35 @@ server:
 spring:
   application:
     name: ZullServer
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8010/eureka/
+
+api:
+  h2console:
+    url:
+      path: /users-ws/h2-console/**
+
+  login:
+    url:
+      path: /users-ws/users/login
+
+  registration:
+    url:
+      path: /users-ws/users
+
+authorization:
+  token:
+    header:
+      name: Authorization
+      prefix: Bearer
+
+#token:
+#  secret: test_secret

@@ -13,3 +13,14 @@ spring:
           username: dbsqud1105@gmail.com
           password: dbsqud7008!
           clone-on-start: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
