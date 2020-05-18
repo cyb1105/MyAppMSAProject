@@ -5,19 +5,25 @@ spring:
   application:
     name: ConfigServer
 
+  profiles:
+    active: native
+
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/cyb1105/MyAppConfiguration.git
-          username: dbsqud1105@gmail.com
-          password: dbsqud7008!
-          clone-on-start: true
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: admin
-    password: admin
+#        git:
+#          uri: https://github.com/cyb1105/MyAppConfiguration.git
+#          username: dbsqud1105@gmail.com
+#          password: *********
+#          clone-on-start: true
+        native:
+          search-locations: file:///${user.home}/Work/dev
+
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: admin
+#    password: admin
 
 management:
   endpoints:

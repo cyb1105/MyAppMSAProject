@@ -1,0 +1,21 @@
+회원가입
+post - http://localhost:8011/users-ws/users
+
+{
+	"firstName":"java",
+	"lastName":"script",
+	"email":"test@dddddd.com",
+	"password":"12345"
+}
+
+
+로그인
+post - http://localhost:8011/users-ws/users/login
+{
+	"email":"test@dddddd.com",
+	"password":"12345"
+}
+
+albums에 있는 회원가져오기
+GET - http://localhost:8011/users-ws/users/35c52f86-1b96-4534-a637-34de0a864422
+   token - eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzNWM1MmY4Ni0xYjk2LTQ1MzQtYTYzNy0zNGRlMGE4NjQ0MjIiLCJleHAiOjE1ODk4NzM0Nzh9.turd8yFKd-c3tRk86H8cpz9DmowJoD-Nml7cFHWnixVhKiqLSq0a_uznxywUPXjzO-GMa1hJSNVHKq4cAq7Zrg

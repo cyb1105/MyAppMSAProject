@@ -3,6 +3,7 @@ package com.example.myappapiusers.controller;
 import com.example.myappapiusers.model.CreateUserRequestModel;
 import com.example.myappapiusers.model.CreateUserResponseModel;
 import com.example.myappapiusers.model.LoginRequestModel;
+import com.example.myappapiusers.model.UserResponseModel;
 import com.example.myappapiusers.repository.UserRepository;
 import com.example.myappapiusers.service.UserService;
 import com.example.myappapiusers.shared.UserDto;
@@ -63,6 +64,20 @@ public class UsersController {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(returnValue);
     }
+
+    @GetMapping(value = "/{userId}",
+            produces = {MediaType.APPLICATION_JSON_VALUE,
+                    MediaType.APPLICATION_XML_VALUE
+            })
+    public ResponseEntity<UserResponseModel> getUser(
+            @PathVariable("userId") String userId
+    ){
+        UserDto userDto= userService.getUserByUserId(userId);
+        UserResponseModel  returnValue =
+                new ModelMapper().map(userDto, UserResponseModel.class);
+        return ResponseEntity.status(HttpStatus.OK).body(returnValue);
+    }
+
 
 
 

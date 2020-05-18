@@ -2,4 +2,5 @@ spring:
   cloud:
     config:
       uri: http://localhost:8012
-      name: ConfigServer
+      name: users-ws
+#      name: ConfigServer

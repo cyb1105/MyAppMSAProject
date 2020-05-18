@@ -1,0 +1,6 @@
+gateway:
+    ip: 59.29.224.131
+
+token: 
+    expiration_time: 86400000 #1days(milliseconds)
+    secret: '{cipher}AQAvrpy1qJpAKnfSnEydaCDn1B0J0Qm9GU5Mz9k/DahP7KTyMhLTy4EIwADfqIvRYw8wdJ/tXgqv0HyCvzQsmwgXPBAcMJTqQ+Ge6H+4+hBxT8YV2KM1bAa5ZNKCekZVSpYpnEzY5V1EAJ/JLAvPbocSQSkdcDAUomfJemE+R1zYR/Rv2g+CRDEbuvrSWYF72lzxA6/ELk3UILt17gJJjsVeCXTXJ/b4NHB+8tq3HJ+64Cz3THIMGqI8zthNJ2zFwu40HomPp3g7VtoUlanlvdveazEM+4BZ04eTp+6CSxCCPyrBr8xWcncqIw8tJyH1PhMTzsDBJ3BXpXl0E7Wa8hvY5gFKMQVrftbAcAVYPZxmxCNCpxZ9ZEvbo/6dLx4sCGg='
