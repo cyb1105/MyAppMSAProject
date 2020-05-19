@@ -19,11 +19,11 @@ spring:
         native:
           search-locations: file:///${user.home}/Work/dev
 
-#  rabbitmq:
-#    host: localhost
-#    port: 5672
-#    username: admin
-#    password: admin
+  rabbitmq:
+    host: localhost
+    port: 25672
+    username: admin
+    password: admin
 
 management:
   endpoints:

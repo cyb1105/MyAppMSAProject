@@ -1,10 +1,14 @@
 package com.example.myappapiusers.service;
 
+import com.example.myappapiusers.client.AccountServiceClient;
 import com.example.myappapiusers.client.AlbumServiceClient;
 import com.example.myappapiusers.data.UserEntity;
+import com.example.myappapiusers.model.AccountResponseModel;
 import com.example.myappapiusers.model.AlbumResponseModel;
 import com.example.myappapiusers.repository.UserRepository;
 import com.example.myappapiusers.shared.UserDto;
+import feign.FeignException;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,17 +27,20 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
+@Slf4j
 public class UserServiceImpl implements UserService {
     UserRepository repository;
     BCryptPasswordEncoder bCryptPasswordEncoder;
     //RestTemplate restTemplate;
     AlbumServiceClient albumServiceClient;
+    AccountServiceClient accountServiceClient;
 
     @Autowired
-    public UserServiceImpl(UserRepository repository, BCryptPasswordEncoder bCryptPasswordEncoder, AlbumServiceClient albumServiceClient) {
+    public UserServiceImpl(UserRepository repository, BCryptPasswordEncoder bCryptPasswordEncoder, AlbumServiceClient albumServiceClient,AccountServiceClient accountServiceClient) {
         this.repository = repository;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
         this.albumServiceClient = albumServiceClient;
+        this.accountServiceClient= accountServiceClient;
     }
 
     @Override
@@ -94,10 +101,18 @@ public class UserServiceImpl implements UserService {
 //
 //        });
 //        List<AlbumResponseModel> albumsList = albumsListResponse.getBody();
+//        List<AlbumResponseModel> albumsList = null;
+//        try {
+//            albumServiceClient.getAlbums(userId);
+//        }catch(FeignException ex){
+//            log.error(ex.getLocalizedMessage());
+//        }
         List<AlbumResponseModel> albumsList = albumServiceClient.getAlbums(userId);
+        List<AccountResponseModel> accountList = accountServiceClient.getAccounts(userId);
         userDto.setAlbums(albumsList);
-
+        userDto.setAccounts(accountList);
         return userDto;
 
     }
+
 }

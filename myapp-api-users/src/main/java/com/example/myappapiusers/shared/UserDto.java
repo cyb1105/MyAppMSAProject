@@ -1,5 +1,6 @@
 package com.example.myappapiusers.shared;
 
+import com.example.myappapiusers.model.AccountResponseModel;
 import com.example.myappapiusers.model.AlbumResponseModel;
 import lombok.Data;
 
@@ -17,4 +18,5 @@ public class UserDto {
     private String encryptedPassword;
 
     private  List<AlbumResponseModel> albums;
+    private  List<AccountResponseModel> accounts;
 }

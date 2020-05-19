@@ -12,4 +12,5 @@ public class UserResponseModel {
     private String email;
 
     private List<AlbumResponseModel> albums;
+    private List<AccountResponseModel> accounts;
 }
