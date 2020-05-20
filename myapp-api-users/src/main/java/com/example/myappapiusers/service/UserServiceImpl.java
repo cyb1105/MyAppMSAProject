@@ -107,7 +107,9 @@ public class UserServiceImpl implements UserService {
 //        }catch(FeignException ex){
 //            log.error(ex.getLocalizedMessage());
 //        }
+        log.info("Before calling albums microservice");
         List<AlbumResponseModel> albumsList = albumServiceClient.getAlbums(userId);
+        log.info("after calling albums microservice");
         List<AccountResponseModel> accountList = accountServiceClient.getAccounts(userId);
         userDto.setAlbums(albumsList);
         userDto.setAccounts(accountList);
