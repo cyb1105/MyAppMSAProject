@@ -1,4 +1,4 @@
-회원가입
+회원가입 방법
 post - http://localhost:8011/users-ws/users
 
 {
@@ -9,7 +9,7 @@ post - http://localhost:8011/users-ws/users
 }
 
 
-로그인
+로그인 방법
 post - http://localhost:8011/users-ws/users/login
 {
 	"email":"test@dddddd.com",
